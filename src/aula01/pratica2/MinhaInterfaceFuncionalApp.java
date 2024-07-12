@@ -5,8 +5,8 @@ public class MinhaInterfaceFuncionalApp {
         MinhaInterfaceFuncional func = () -> {
             System.out.println("Meotodo agir funcional");
         };
-        func.agir();
-        func.metodoDefault();
-        MinhaInterfaceFuncional.metodoEstatico();
+            func.agir();
+            func.metodoDefault();
+            MinhaInterfaceFuncional.metodoEstatico();
         }
 }
