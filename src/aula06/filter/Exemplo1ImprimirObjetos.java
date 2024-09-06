@@ -1,4 +1,4 @@
-package aula06.exemplos;
+package aula06.filter;
 
 import java.util.Arrays;
 import java.util.Iterator;
