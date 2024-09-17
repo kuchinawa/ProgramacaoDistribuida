@@ -18,6 +18,8 @@ public class Exemplo5Sorted {
         produtos.add(new Produto(303, "Tablet"));
         produtos.add(new Produto(404, "Smartwatch"));
         produtos.add(new Produto(505, "PC"));
+        produtos.add(new Produto(707, "SmartTV"));
+
         // Filtra produtos com nomes curtos (<= 7 caracteres),
         // mapeia para "código- nome", e ordena por código
         Set<String> resultado = produtos.stream()
@@ -28,5 +30,13 @@ public class Exemplo5Sorted {
                 .sorted() // Ordena em ordem crescente (natural para strings)
                 .collect(Collectors.toSet()); // Coleta o resultado em um Set
         System.out.println("Resultado: " + resultado);
+
+        produtos.stream()
+                // Filtra produtos com nomes curtos
+                .filter(p-> p.getNome().length() <= 7)
+                // Mapeia para "código- nome"
+                .map(p-> p.getCodigo() + "- " + p.getNome())
+                .sorted() // Ordena em ordem crescente (natural para strings)
+                .forEach(System.out::println); // Imprime cada elemento
     }
 }
